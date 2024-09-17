@@ -11,19 +11,21 @@ let productos = document.querySelector(".productos");
 //     })
 // })
 
-let url= "https://fakestoreapi.com/products";
-
 async function mostrarDatos() {
-    let resp= await fetch("https://fakestoreapi.com/products")
-    let data= await resp.json()
-    data.forEach(prod => {
+    try{
+        let resp= await fetch("https://fakestoreapi.com/products")
+        let data= await resp.json()
+        data.forEach(prod => {
+        // console.log(prod.image)
         productos.innerHTML += `<div class= "producto">
                                     <h4>${prod.title}</h4>
-                                    <img src= "${prod.image} alt="${prod.title}/>
+                                    <img src="${prod.image}" alt="${prod.title}"/>
                                     <p>$<span>${prod.price}</span></p>
                                 </div>`
-    })
-    
+        })
+    }catch(error){
+        console.error("Error al mostrar datos",error)
+    }
 }
+
 mostrarDatos()
-.catch(err => console.log(err))
