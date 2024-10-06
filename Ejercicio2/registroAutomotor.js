@@ -8,7 +8,7 @@ var RegistroAutomotor = /** @class */ (function () {
         this.camiones = [];
         this.motos = [];
     }
-    //Metodo set
+    //Metodo get
     RegistroAutomotor.prototype.getNombreRegAu = function () {
         return this.nombre;
     };
@@ -26,10 +26,39 @@ var RegistroAutomotor = /** @class */ (function () {
         this.nombre = nombreRegAu;
     };
     RegistroAutomotor.prototype.agregarVehiculo = function (listaAutos, listaCamiones, listaMotos) {
-        this.autos.push(listaAutos);
-        this.camiones.push(listaCamiones);
-        this.motos.push(listaMotos);
+        if (listaAutos != undefined) {
+            this.autos.push(listaAutos);
+        }
+        else {
+            this.autos = [];
+        }
+        if (listaCamiones != undefined) {
+            this.camiones.push(listaCamiones);
+        }
+        else {
+            this.camiones = [];
+        }
+        if (listaMotos != undefined) {
+            this.motos.push(listaMotos);
+        }
+        else {
+            this.motos = [];
+        }
     };
+    // public modificarVehiculo(auto?:Autos,camion?:Camiones,moto?:Motos,marca?:string,modelo?:string,anio?:number,patente?:number):void{
+    //     auto.setMarcaAuto(marca);
+    //     auto.setModeloAuto(modelo);
+    //     auto.setAnioAuto(anio);
+    //     auto.setPatenteAuto(patente);
+    //     camion.setMarcaCamion(marca);
+    //     camion.setModeloCamion(modelo);
+    //     camion.setAnioCamion(anio);
+    //     camion.setPatenteCamion(patente);
+    //     moto.setMarcaMoto(marca);
+    //     moto.setModeloMoto(modelo);
+    //     moto.setAnioMoto(anio);
+    //     moto.setPatenteMoto(patente);
+    // }
     RegistroAutomotor.prototype.eliminarVehiculo = function (modeloAuto, modeloCamion, modeloMoto) {
         this.autos = this.autos.filter(function (auto) { return auto.getModeloAuto() !== modeloAuto; });
         this.camiones = this.camiones.filter(function (camion) { return camion.getModeloCamion() !== modeloCamion; });

@@ -26,6 +26,6 @@ regAu1.agregarVehiculo(auto1, camion1, moto1);
 //Agregar/Eliminar vehiculos
 var auto2 = new autos_1.Autos("Mercedes", "W13", 2009, 7);
 regAu1.agregarVehiculo(auto2);
-// console.log(regAu1.getListaAutos());
+console.log(regAu1.getListaAutos());
 regAu1.eliminarVehiculo("W13");
 console.log(regAu1.getListaAutos());
