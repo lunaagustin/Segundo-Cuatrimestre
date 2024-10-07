@@ -20,8 +20,8 @@ regAu1.agregarVehiculo(auto1,camion1,moto1);
 // console.log(regAu1);
 
 //metodos get
-// console.log(camion2.getMarcaCamion());
-// console.log(moto2.getAnioMoto());
+console.log(camion2.getMarcaVehiculo());
+console.log(moto2.getAnioVehiculo());
 
 //metodos set
 regAu1.agregarVehiculo(auto2);
@@ -31,4 +31,4 @@ regAu1.eliminarVehiculo("Colapinto");
 // console.log(regAu1.getListaAutos());
 
 regAu1.modificarVehiculo(auto1,"Sauber");
-console.log(regAu1.getListaAutos());
+// console.log(regAu1.getListaAutos());
